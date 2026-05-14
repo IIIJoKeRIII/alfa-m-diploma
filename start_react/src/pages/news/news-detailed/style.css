@@ -1,0 +1,276 @@
+.full-text-style{
+    text-align: justify;
+    font-size: 13pt;
+}
+
+.title{
+    margin-top: 70px;
+    text-align: left;
+}
+
+.back-to-news-link {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #9e1b32;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-to-news-link:hover {
+    color: #7a1528;
+    text-decoration: underline;
+}
+
+.back-to-news-top {
+    margin-top: 8px;
+}
+
+.news-detail-meta {
+    text-align: left;
+    color: #6b5558;
+    font-size: 0.95rem;
+    margin: -12px 0 16px 0;
+}
+
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.news-not-found {
+    text-align: center;
+}
+
+.news-not-found .title {
+    text-align: center;
+}
+
+.news-not-found-text {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.add-comment{
+    width: 100%;
+    height: 100%;
+    font-size: 14pt;
+    resize: none;
+}
+
+.news-item{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Секция комментариев */
+.comments-section {
+    margin-top: 40px;
+}
+
+.comments-title {
+    color: #1f1416;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #9e1b32;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Поле ввода комментария */
+.comment-textarea {
+    padding: 16px;
+    border: 1.5px solid #e8dede;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    background-color: #fff;
+    color: #1f1416;
+    display: flex;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #9e1b32;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(158, 27, 50, 0.12);
+}
+
+.comment-textarea::placeholder {
+    color: #95a5a6;
+}
+
+.comment-author-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.comment-author-caption {
+    display: block;
+    font-size: 0.85rem;
+    color: #5c4a4d;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.comment-author-input {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1.5px solid #e8dede;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+}
+
+.comment-author-input:focus {
+    outline: none;
+    border-color: #9e1b32;
+    background: #fff;
+}
+
+.comment-actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.comment-char-count {
+    font-size: 0.85rem;
+    color: #95a5a6;
+}
+
+.comment-char-count-warn {
+    color: #e67e22;
+}
+
+.comment-submit-btn {
+    background-color: #9e1b32;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 0;
+}
+
+.comment-submit-btn:hover {
+    background-color: #7a1528;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(158, 27, 50, 0.25);
+}
+
+.comment-submit-btn:active {
+    transform: translateY(0);
+}
+
+.comment-submit-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Список комментариев */
+.comments-list {
+    padding-top: 20px;
+}
+
+.no-comments {
+    color: #6b5558;
+    text-align: center;
+    font-style: italic;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px dashed #e8dede;
+}
+
+.comment-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #f0e8e8;
+    border-left: 4px solid #9e1b32;
+    box-shadow: 0 2px 8px rgba(158, 27, 50, 0.08);
+}
+
+.comment-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #1f1416;
+    font-size: 0.95rem;
+}
+
+.comment-delete-btn {
+    background: transparent;
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.comment-delete-btn:hover {
+    background: #fadbd8;
+    color: #922b21;
+}
+
+.comment-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 12px;
+    display: block;
+    text-align: left;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .page-container-small {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .comment-actions-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .comment-submit-btn {
+        width: 100%;
+    }
+
+    .comment-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

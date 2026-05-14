@@ -1,0 +1,103 @@
+.news-card {
+    border: 1px solid #e8dede;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.news-card-padding {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card-date {
+    margin: 0 0 4px 0;
+    font-size: 0.82rem;
+    color: #9e1b32;
+    text-align: left;
+    font-weight: 500;
+}
+
+.news-card-comments-line {
+    margin: 0;
+}
+
+.news-title-style {
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.news-text-style {
+    margin-top: auto;
+    text-align: justify;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.dividing-line {
+    border-bottom: 1px solid #e8dede;
+    margin: 20px 0;
+}
+
+.more-btn {
+    color: #fff;
+    width: 46%;
+    padding: 2px 0 2px 0;
+    background: #9e1b32;
+    transition: all 0.3s ease;
+    border: 2px solid #9e1b32;
+    border-radius: 5px;
+}
+
+.more-btn:hover {
+    color: #9e1b32;
+    background: #fff;
+}
+
+.more-btn:focus {
+    outline: none;
+    border-color: #7a1528;
+    box-shadow: 0 0 0 3px rgba(158, 27, 50, 0.25);
+}
+
+.number-comments {
+    padding: 0 10px;
+    text-align: left;
+    color: #212529bf;
+    margin-bottom: 10px;
+}
+
+.number-comments .news-card-comments-line {
+    color: #212529bf;
+}
+
+.news-card-footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Ширина карточек — сетка .news-page (news-page.css) */
+@media (max-width: 575px) {
+    .news-title-style {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .news-title-style {
+        font-size: 1.2rem;
+    }
+
+    .more-btn {
+        width: 100%;
+    }
+}
