@@ -1,22 +1,22 @@
 import { useParams, Link } from "react-router-dom";
-import { news } from "../news-page/index.jsx";
+import { materials } from "../../../data/materials.js";
 import "./style.css"
 import {useEffect, useState} from "react";
 
 const MAX_COMMENT_LEN = 2000;
 
-export const NewsDetailed = () => {
+export const MaterialDetail = () => {
     const { id } = useParams();
-    const newsId = parseInt(id, 10);
-    const newsItem = news.find((item) => item.id === newsId);
+    const materialId = parseInt(id, 10);
+    const materialItem = materials.find((item) => item.id === materialId);
     const [comments, setComments] = useState(() => {
-        const saved = sessionStorage.getItem(`news_${newsId}_comments`);
+        const saved = sessionStorage.getItem(`material_${materialId}_comments`);
         return saved ? JSON.parse(saved) : [];
     });
     const [newComment, setNewComment] = useState('');
     const [authorName, setAuthorName] = useState('');
 
-    useEffect(() => {sessionStorage.setItem(`news_${newsId}_comments`, JSON.stringify(comments));},[comments, newsId]);
+    useEffect(() => {sessionStorage.setItem(`material_${materialId}_comments`, JSON.stringify(comments));},[comments, materialId]);
 
     const handleAddComment = () => {
         const text = newComment.trim();
@@ -42,7 +42,7 @@ export const NewsDetailed = () => {
         }
     }
 
-    if (!newsItem || Number.isNaN(newsId)) {
+    if (!materialItem || Number.isNaN(materialId)) {
         return (
             <div className="page-container page-container-small news-not-found">
                 <h1 className="title">Материал не найден</h1>
@@ -57,17 +57,17 @@ export const NewsDetailed = () => {
     return (
         <div className="page-container page-container-small">
             <Link to="/materials" className="back-to-news-link back-to-news-top">← К списку материалов</Link>
-            <h1 className="title">{newsItem.title}</h1>
-            <p className="news-detail-meta">Опубликовано: {newsItem.date}</p>
-            {newsItem.img ? (
+            <h1 className="title">{materialItem.title}</h1>
+            <p className="news-detail-meta">Опубликовано: {materialItem.date}</p>
+            {materialItem.img ? (
                 <img
-                    src={newsItem.img}
+                    src={materialItem.img}
                     alt=""
                     className="news-image"
                 />
             ) : null}
             <p className="full-text-style">
-                {newsItem.fullText.split('\n').map((line, index) => (
+                {materialItem.fullText.split('\n').map((line, index) => (
                     <span key={index}>
                         {line}
                         <br />

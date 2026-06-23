@@ -2,9 +2,9 @@ import './style.css'
 import {Link} from 'react-router-dom'
 
 export const NewsCard = (props) => {
-    const newsItem = props.newsItem
+    const materialItem = props.materialItem
 
-    const savedComments = sessionStorage.getItem(`news_${newsItem.id}_comments`)
+    const savedComments = sessionStorage.getItem(`material_${materialItem.id}_comments`)
 
     let commentCount = 0
     if(savedComments){
@@ -18,14 +18,14 @@ export const NewsCard = (props) => {
     return (
         <div className="news-card">
             <div className="news-card-padding">
-                <h3 className="news-title-style">{newsItem.title}</h3>
-                <p className="news-text-style">{newsItem.text}</p>
-                <Link to={`/materials/${newsItem.id}`} className="more-btn">Узнать больше</Link>
+                <h3 className="news-title-style">{materialItem.title}</h3>
+                <p className="news-text-style">{materialItem.text}</p>
+                <Link to={`/materials/${materialItem.id}`} className="more-btn">Узнать больше</Link>
             </div>
             <footer className="news-card-footer">
                 <div className="dividing-line"></div>
                 <div className="number-comments">
-                    <p className="news-card-date">{newsItem.date}</p>
+                    <p className="news-card-date">{materialItem.date}</p>
                     <p className="news-card-comments-line">Комментарии: {commentCount}</p>
                 </div>
             </footer>

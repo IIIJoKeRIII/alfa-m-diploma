@@ -31,8 +31,8 @@ export const Activity = () => {
         В реестре также указаны, в частности, оптовая торговля табачными
         изделиями, транспортно-складские операции и консалтинг — см. полный
         список на сервисах, агрегирующих данные ЕГРЮЛ (
-        <a href={company.demoReferenceUrl} target="_blank" rel="noreferrer">
-          демо-ссылка (example.com)
+        <a href={company.referenceInfoUrl} target="_blank" rel="noreferrer">
+          справочный сервис
         </a>
         ).
       </p>

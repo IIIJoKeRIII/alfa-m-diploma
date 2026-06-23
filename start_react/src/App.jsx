@@ -4,7 +4,7 @@ import { MaterialsPage } from "./pages/news/news-page/index.jsx";
 import { Activity } from "./pages/activity/index.jsx";
 import { Contacts } from "./pages/contacts/index.jsx";
 import { Header } from "./layout/header.jsx";
-import { NewsDetailed } from "./pages/news/news-detailed/index.jsx";
+import { MaterialDetail } from "./pages/news/news-detailed/index.jsx";
 import { Home } from "./pages/home/index.jsx";
 import { company } from "./data/alfa-m.js";
 
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/materials" element={<MaterialsPage />} />
-          <Route path="/materials/:id" element={<NewsDetailed />} />
+          <Route path="/materials/:id" element={<MaterialDetail />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
@@ -27,9 +27,8 @@ function App() {
       <footer className="site-footer">
         <div className="site-footer-inner">
           <p className="site-footer-text">
-            ООО «Альфа-М» · демонстрационный корпоративный сайт. Реквизиты на
-            страницах — заглушки; для юридических целей используйте выписку
-            ЕГРЮЛ.
+            ООО «Альфа-М». Информация на сайте носит ознакомительный характер; для
+            юридических целей используйте выписку из ЕГРЮЛ.
           </p>
           <p className="site-footer-copy">
             © {new Date().getFullYear()} ИНН {company.inn} · ОГРН {company.ogrn}

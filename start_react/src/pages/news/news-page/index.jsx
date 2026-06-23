@@ -3,9 +3,7 @@ import { NewsCard } from "../news-card/index.jsx";
 import { materials } from "../../../data/materials.js";
 import "./news-page.css";
 
-export const news = materials;
-
-function parseNewsDate(dateStr) {
+function parseMaterialDate(dateStr) {
     const [d, m, y] = dateStr.split(".").map(Number);
     return new Date(y, m - 1, d);
 }
@@ -16,15 +14,15 @@ export const MaterialsPage = () => {
 
     const filteredSorted = useMemo(() => {
         const q = query.trim().toLowerCase();
-        let list = news.filter(
+        let list = materials.filter(
             (item) =>
                 !q ||
                 item.title.toLowerCase().includes(q) ||
                 item.text.toLowerCase().includes(q)
         );
         list = [...list].sort((a, b) => {
-            const da = parseNewsDate(a.date);
-            const db = parseNewsDate(b.date);
+            const da = parseMaterialDate(a.date);
+            const db = parseMaterialDate(b.date);
             return sortOrder === "new" ? db - da : da - db;
         });
         return list;
@@ -34,8 +32,8 @@ export const MaterialsPage = () => {
         <div className="page-container page-container-big">
             <h1 className="header-news">Материалы о компании</h1>
             <p className="materials-lead">
-                Краткие тексты для макета сайта об ООО «Альфа-М». Реквизиты в
-                материалах — заглушки; не являются юридической консультацией.
+                Обзорные материалы об ООО «Альфа-М». Тексты не заменяют
+                юридическую консультацию и официальные документы организации.
             </p>
             <div className="news-toolbar">
                 <label className="news-toolbar-label">
@@ -61,13 +59,13 @@ export const MaterialsPage = () => {
                     </select>
                 </label>
                 <p className="news-results-count" role="status">
-                    Найдено: {filteredSorted.length} из {news.length}
+                    Найдено: {filteredSorted.length} из {materials.length}
                 </p>
             </div>
             <div className="news-page">
                 {filteredSorted.length > 0 ? (
                     filteredSorted.map((item) => (
-                        <NewsCard newsItem={item} key={item.id} />
+                        <NewsCard materialItem={item} key={item.id} />
                     ))
                 ) : (
                     <p className="news-empty">
